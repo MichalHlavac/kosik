@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Nákupní košík - testovací úloha
 
-## Available Scripts
+## Zadání
+Cílem je vytvořit funkční model nákupního košíku, který umožní vložit zboží z katalogu do nákupního košíku, změnit množství zboží v nákupním košíku a spočítá jeho cenu. Cena nákupu je prostý součet cen položek.
 
-In the project directory, you can run:
+## User stories
+1. Jako zákazník chci vložit produkt ze seznamu produktů do nákupního košíku.
+2. Jako zákazník chci vidět celkovu cenu nákupu a obsah nákupního košíku s následujícími informacemi pro každou položku 
+    * Název produktu
+    * Množství
+    * Jednotková cena
+    * Cena řádku (množství * jednotková cena)
+3. Jako zákazník chci měnit množství u jednotlivých položek
+4. Jako zákazník chci odebrat položku z košíku
 
-### `npm start`
+## UI komponenty aplikace
+* Jednoduchý seznam produktů
+* Náhled nákupního košíku s položkami a výslednou sumou
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Akceptační kritéria
+* Řešení lze spustit
+* řešení obsahuje základní testovací data
+* Řešení splňuje všechny user stories.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Není součástí
+Součástí řešení není originální a detaině zpracovaná grafika, stačí jednoduchý funkční model.
