@@ -1,13 +1,14 @@
 import React,{useContext} from 'react';
 import products from './Data';
-import{ SCContext} from './SCContext';
+import{ SCContext,TContext} from './SCContext';
 
 export default ()=>{
+    const oldTotal=total;
     const[items, setItem]=useContext(SCContext)
     const productList = products.map(product =>{
         const addItem =()=>items.some(item=>item.name===product.name )?
             (null):
-            (setItem(items.concat({"name":product.name,"price":product.price,"quantity":1})));
+            (setItem(items.concat({"name":product.name,"price":product.price,"quantity":1}))& setTotal(oldTotal+product.price));
         return(
             <li key={product.name}>
                 <h2>{product.name}</h2>
