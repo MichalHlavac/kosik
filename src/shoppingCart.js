@@ -1,5 +1,5 @@
 import React,{useContext,useState} from 'react';
-import {SCContext} from './SCContext';
+import {SCContext,TContext} from './SCContext';
 
 export default ()=>{
     const[items, setItem]=useContext(SCContext);
