@@ -1,28 +1,33 @@
-import React,{useContext,useState} from 'react';
+import React,{useContext} from 'react';
 import {SCContext,TContext} from './SCContext';
+
 
 export default ()=>{
     const[items, setItem]=useContext(SCContext);
     const [total,setTotal]=useContext(TContext);
     const shopingCart = items.map(item =>{
         const cloneItems= [...items];
-        const oldTotal = total;
+        const oldTotal = Number(total);
         const ID = items.indexOf(item);
+        const rowPrice=item.price*item.quantity;
+        const Price =item.price;
         const newItems =(newValue)=>{cloneItems.splice(ID,1,{"name":item.name,"price":item.price,"quantity":newValue})
                 return(cloneItems)};
-        const updateItem = e=>setItem(newItems(e.target.value)&setTotal(oldTotal-rowPrice+(item.price*e.target.value)));
-        const deleteItem = ()=>setItem(items.filter(i=>i.name!==item.name)& setTotal(oldTotal-rowPrice));
-        const rowPrice= item.price*item.quantity;
+        const updateItem = e=>setItem(newItems(e.target.value))& setTotal(oldTotal-rowPrice+(e.target.value*Price));
+        const deleteItem = ()=>setItem(items.filter(i=>i.name!==item.name))& setTotal(oldTotal-rowPrice);
+        
         return(<div key={item.name}>
-                <h2>{item.name}</h2>
-                <p>{item.price}Kč</p>
+                <h3>{item.name}</h3>
+                <p>{item.price}Kč/mj</p>
                 <p>{item.quantity}Ks</p>
                 <p>{rowPrice}Kč</p>
                 <input type="number" value={item.quantity} min="1" max="100" onChange={updateItem}/>
                 <button onClick={deleteItem}>X</button>
                 </div>)});
-    return(<div>
+    return(
+        <div>
+            <h2>Košík</h2>
             {shopingCart}
-            <p>celkem{" "}{total}Kč</p>
+            <h3>celkem{" "}{total}Kč</h3>
         </div>);
 }

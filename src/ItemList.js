@@ -12,15 +12,16 @@ export default ()=>{
             (setItem(items.concat({"name":product.name,"price":product.price,"quantity":1}))& setTotal(oldTotal+product.price));
         return(
             <li key={product.name}>
-                <h2>{product.name}</h2>
+                <h3>{product.name}</h3>
                 <p>{product.price}Kč</p>
                 <button onClick={addItem}>Přidat</button>
             </li>)});
     return(
-        <ul>
-            {productList}
-            
-        </ul>
+        <div>
+            <h2>Zboží</h2>
+            <ul>
+                {productList}
+            </ul>
+        </div>
     );
-
-}
+};
