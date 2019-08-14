@@ -3,6 +3,7 @@ import products from './Data';
 import{ SCContext,TContext} from './SCContext';
 
 export default ()=>{
+    const [total,setTotal]=useContext(TContext);
     const oldTotal=total;
     const[items, setItem]=useContext(SCContext)
     const productList = products.map(product =>{
