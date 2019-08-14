@@ -10,5 +10,15 @@ const SCProvider = (props) => {
     </SCContext.Provider>
   );
 }
+const TContext = React.createContext([{}, () => {}]);
 
-export { SCContext, SCProvider };
+const TProvider = (props) => {
+  const [total, setTotal] = useState(0);
+  return (
+    <TContext.Provider value={[total, setTotal]}>
+      {props.children}
+    </TContext.Provider>
+  );
+}
+
+export { SCContext, SCProvider,TContext,TProvider};
